@@ -9,9 +9,9 @@ import semantique.reducers
 import semantique.dimensions
 import semantique.components
 
-import pkg_resources
+from importlib.metadata import version, PackageNotFoundError
 
 try:
-  __version__ = pkg_resources.get_distribution("semantique").version
-except Exception:
+  __version__ = version("semantique")
+except PackageNotFoundError:
   __version__ = "unknown"
